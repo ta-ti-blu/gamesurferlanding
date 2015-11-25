@@ -35,7 +35,7 @@
     margin-left: 2.5%; }
   .column:first-child,
   .columns:first-child {
-    margin-left: 0; }
+    margin-left: 2.5%; }
 
   .one.column,
   .one.columns                    { width: 4.66666666667%; }
@@ -103,7 +103,8 @@ body {
   font-weight: 400;
   font-family: "Lato", Helvetica, sans-serif;
   color: #222; 
-  background-color: #F6F6F6;}
+  background-color: #F6F6F6;
+  width:100%;}
 
 
 
@@ -265,6 +266,7 @@ h1 {
 –––––––––––––––––––––––––––––––––––––––––––––––––– */
 .secondary {
 	margin-top: 60px;
+  text-align: center;
 }
 
 
@@ -279,7 +281,7 @@ h1 {
 	width: 100%;
 	height: auto;
 	max-width: 100%;
-	background-color: 
+
 
 } 
 
@@ -427,3 +429,7 @@ label > .label-body {
   display: inline-block;
   margin-left: .5rem;
   font-weight: normal; }
+
+
+
+
