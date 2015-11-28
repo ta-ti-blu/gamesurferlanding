@@ -23,6 +23,8 @@
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
   <script type="text/javascript" src="js/plax.js"></script>
   <script type="text/javascript" src="js/wow.min.js"></script>
+  <script type="text/javascript" src="js/jquery.ajaxchimp.js"></script>
+  
     <!-- CSS
     –––––––––––––––––––––––––––––––––––––––––––––––––– -->
     <!--   <link rel="stylesheet" href="css/normalize.css"> -->
@@ -41,10 +43,49 @@
     <script type="text/javascript">
     	$(document).ready(function () {
     		$('#shell img').plaxify()
-    		$.plax.enable()
+    		
+        $.plax.enable()
+
+
+        $('#mc-embedded-subscribe-form').ajaxChimp({
+          url: 'http://gamesurferapp.us12.list-manage.com/subscribe/post?u=795f9ed34e0038e9e5272a832&id=f2a5aef64d',
+          callback:function(response) {
+              console.log(response)
+
+              
+              if(response.result === 'error'){
+                  changeText('<h2>Opps! Looks like you have been signed up already</h2>')
+                  return;
+              }
+              changeText('<h2>Thanks for joining!</h2><')
+          } 
+
+      });
+
+        
 
     	})
-    	new WOW().init();
+    
+new WOW().init();
+      
+ var changeText = function (text){
+      
+       $('.hidable').fadeOut({
+            duration:800,
+            complete:function(){
+              $("#feedback").fadeOut({
+                complete:function() {
+                  $(this).html(text).fadeIn({duration:1000});
+                },
+                duration:800
+             });
+            }
+
+
+       })
+      
+ }
+     
     </script>
 
 
@@ -77,12 +118,12 @@
 
           <!-- Begin MailChimp Signup Form -->
           <div id="mc_embed_signup">
-            <form action="//gamesurferapp.us12.list-manage.com/subscribe/post?u=795f9ed34e0038e9e5272a832&amp;id=f2a5aef64d" method="post" id="mc-embedded-subscribe-form" name="mc-embedded-subscribe-form" class="validate" target="_blank" novalidate>
+            <form  id="mc-embedded-subscribe-form" name="mc-embedded-subscribe-form" class="validate">
               <div id="mc_embed_signup_scroll">
 
                 <div class="mc-field-group">
-                  <label class="wow fadeInUp" for="mce-EMAIL" data-wow-delay="2s"><h2>Never play alone again</h2></label>
-                  <input class="seven columns wow fadeInUp" data-wow-delay="3.5s" name="EMAIL" class="required email" type="email" placeholder="your@email.com" id="mce-EMAIL">
+                  <label class="wow fadeInUp" data-wow-delay="2s" id="feedback"><h2>Never play alone again</h2></label>
+                  <input class="seven columns wow fadeInUp hidable" data-wow-delay="3.5s" name="EMAIL" class="required email" type="email" placeholder="your@email.com" id="mce-EMAIL">
                 </div>
 
                 <div id="mce-responses" class="clear">
@@ -93,7 +134,7 @@
                 <div style="position: absolute; left: -5000px;" aria-hidden="true"><input type="text" name="b_a1e269c4dd8ae08d20a13b149_9ebb84299d" tabindex="-1" value=""></div>
 
                 <div class="clear">
-                 <input class="four columns button-primary wow fadeInDown button" data-wow-delay="3.5s" type="submit" value="Subscribe" name="subscribe" id="mc-embedded-subscribe">
+                 <input class="four columns button-primary wow fadeInDown button hidable" data-wow-delay="3.5s" type="submit" value="Sign Up" name="subscribe" id="mc-embedded-subscribe">
                </div>
              </div>
            </form>
