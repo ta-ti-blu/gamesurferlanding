@@ -5,9 +5,28 @@
     <!-- Basic Page Needs
     –––––––––––––––––––––––––––––––––––––––––––––––––– -->
     <meta charset="utf-8">
-    <title>GAME SURFER - Never play alone again</title>
-    <meta name="description" content="">
-    <meta name="author" content="">
+    <title>GAME SURFER</title>
+    <meta name="description" content="Find cool people from all over the world that share the same passion for your favourite video games. Never play alone again.">
+    <meta name="author" content="Horns and Hooves">
+
+
+    <!-- Social Media Meta 
+    –––––––––––––––––––––––––––––––––––––––––––––––––– -->    
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Game Surfer App">
+    <meta name="twitter:description" content="Find cool people from all over the world that share the same passion for your favourite video games. Never play alone again.">
+    <meta name="twitter:image" content="images/gamesurfer-app-preview.jpg">
+
+    <meta property="og:title" content="Game Surfer App" />
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content="http://gamesurferapp.com/" />
+    <meta property="og:image" content="images/gamesurfer-app-preview.jpg" />
+    <meta property="og:description" content="Find cool people from all over the world that share the same passion for your favourite video games. Never play alone again." />
+
+
+
+
+
 
     <!-- Mobile Specific Metas
     –––––––––––––––––––––––––––––––––––––––––––––––––– -->
@@ -50,47 +69,47 @@
         $('#mc-embedded-subscribe-form').ajaxChimp({
           url: 'http://gamesurferapp.us12.list-manage.com/subscribe/post?u=795f9ed34e0038e9e5272a832&id=f2a5aef64d',
           callback:function(response) {
-              console.log(response)
+            console.log(response)
 
-              
-              if(response.result === 'error'){
-                  changeText('<h2>Opps! Looks like you have been signed up already</h2>')
-                  return;
-              }
-              changeText('<h2>Thanks for joining!</h2><')
+
+            if(response.result === 'error'){
+              changeText('<h2>Opps! Looks like you have been signed up already</h2>')
+              return;
+            }
+            changeText('<h2>Thanks for joining!</h2><')
           } 
 
-      });
+        });
 
         
 
-    	})
-    
-new WOW().init();
+      })
+
+      new WOW().init();
       
- var changeText = function (text){
-      
+      var changeText = function (text){
+
        $('.hidable').fadeOut({
-            duration:800,
-            complete:function(){
-              $("#feedback").fadeOut({
-                complete:function() {
-                  $(this).html(text).fadeIn({duration:1000});
-                },
-                duration:800
-             });
-            }
+        duration:800,
+        complete:function(){
+          $("#feedback").fadeOut({
+            complete:function() {
+              $(this).html(text).fadeIn({duration:1000});
+            },
+            duration:800
+          });
+        }
 
 
-       })
-      
- }
+      })
+
+     }
      
-    </script>
+   </script>
 
 
-  </head>
-  <body>
+ </head>
+ <body>
 
     <!-- Primary Page Layout
     –––––––––––––––––––––––––––––––––––––––––––––––––– -->
@@ -168,16 +187,16 @@ new WOW().init();
     </p>
   </div>
 
-<script>
-  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
-  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
-  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
-  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+  <script>
+    (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+      (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+      m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+    })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
 
-  ga('create', 'UA-70665568-1', 'auto');
-  ga('send', 'pageview');
+    ga('create', 'UA-70665568-1', 'auto');
+    ga('send', 'pageview');
 
-</script>
+  </script>
 
 </body>
 </html>
